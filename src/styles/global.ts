@@ -7,4 +7,4 @@ export const GloblaStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-`;
+`

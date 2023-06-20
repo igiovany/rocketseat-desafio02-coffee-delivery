@@ -18,4 +18,4 @@ export const defaultTheme = {
   'base-card': '#F3F2F2',
   white: '#fff',
   background: '#FAFAFA',
-}
+} as const

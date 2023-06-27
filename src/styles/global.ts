@@ -19,7 +19,12 @@ export const GlobalStyle = createGlobalStyle`
 
   body, input-security, textarea, button {
     font: 400 1rem Roboto, sans-serif;
-  } 
+  }
+
+  input[type="text, number"] {
+    background-color: ${(props) => props.theme['base-input']};
+    border: 1px solid ${(props) => props.theme['base-button']};
+  }
 
 
 `

@@ -13,12 +13,13 @@ export function Checkout() {
     <CheckoutContainer>
       <OrderContainer>
         <h3>Complete seu pedido</h3>
+
         <CheckoutForm id="checkoutForm">
           <span>
             <MapPin size={22} color="#CA7F17" />
             <h4>Endereço de Entrega</h4>
+            <p>Informe o endereço onde deseja receber seu pedido</p>
           </span>
-          <p>Informe o endereço onde deseja receber seu pedido</p>
           <input type="text" required placeholder="CEP" />
           <input type="text" required placeholder="Rua" />
           <input type="number" required placeholder="Número" />
@@ -28,7 +29,7 @@ export function Checkout() {
           <input type="text" required placeholder="UF" />
 
           <span>
-            <CurrencyDollar size={22} />
+            <CurrencyDollar size={22} color="#8047F8" />
             <h4>Pagamento</h4>
             <p>
               O pagamento é feito na entrega. Escolha a forma que deseja pagar

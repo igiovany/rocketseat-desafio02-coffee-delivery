@@ -4,9 +4,8 @@ export const CoffeeItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 1rem 1.25rem 0;
+  margin-bottom: 1.25rem;
   width: 16rem;
-  /* gap: 0.5rem; */
 
   img {
     width: 7.5rem;
@@ -97,6 +96,11 @@ export const CoffeeQuantityTag = styled.div`
     border: none;
     margin: 0 0.25rem;
     cursor: pointer;
+
+    :hover {
+      color: ${(props) => props.theme['purple-dark']};
+      transition: color 0.4s;
+    }
   }
 
   span {

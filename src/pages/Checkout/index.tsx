@@ -1,71 +1,93 @@
-import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from 'phosphor-react'
+import americano from '../../assets/products/americano.svg'
+import arabe from '../../assets/products/arabe.svg'
+import { Minus, Plus, Trash } from 'phosphor-react'
 import {
   CheckoutContainer,
-  CheckoutForm,
-  CoffeeSelection,
+  ConfirmButton,
   OrderContainer,
-  PaymentType,
-  PaymentTypeItem,
+  OrderItem,
+  OrderSummary,
+  RemoveButton,
+  SummaryContainer,
 } from './styles'
+import { CoffeeQuantityTag } from '../Home/Components/CoffeeItem/styles'
+import { CheckoutForm } from './Components/Form'
 
 export function Checkout() {
   return (
     <CheckoutContainer>
       <OrderContainer>
         <h3>Complete seu pedido</h3>
-
-        <CheckoutForm id="checkoutForm">
-          <span>
-            <MapPin size={22} color="#CA7F17" />
-            <h4>Endereço de Entrega</h4>
-            <p>Informe o endereço onde deseja receber seu pedido</p>
-          </span>
-          <input type="text" required placeholder="CEP" />
-          <input type="text" required placeholder="Rua" />
-          <input type="number" required placeholder="Número" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" required placeholder="Bairro" />
-          <input type="text" required placeholder="Cidade" />
-          <input type="text" required placeholder="UF" />
-
-          <span>
-            <CurrencyDollar size={22} color="#8047F8" />
-            <h4>Pagamento</h4>
-            <p>
-              O pagamento é feito na entrega. Escolha a forma que deseja pagar
-            </p>
-          </span>
-
-          <PaymentType>
-            <PaymentTypeItem value="creditCard">
-              <span>
-                <CreditCard size={16} />
-              </span>
-              <p>CARTÃO DE CRÉDITO</p>
-            </PaymentTypeItem>
-
-            <PaymentTypeItem value="debitCard">
-              <span>
-                <Bank size={16} />
-              </span>
-              <p>CARTÃO DE DÉBITO</p>
-            </PaymentTypeItem>
-
-            <PaymentTypeItem value="money">
-              <span>
-                <Money size={16} />
-              </span>
-              <p>DINHEIRO</p>
-            </PaymentTypeItem>
-          </PaymentType>
-        </CheckoutForm>
+        <CheckoutForm />
       </OrderContainer>
-      <CoffeeSelection>
+      <OrderSummary>
         <h3>Cafés selecionados</h3>
-        <button type="submit" form="checkoutForm">
-          CONFIRMAR PEDIDO
-        </button>
-      </CoffeeSelection>
+        <SummaryContainer>
+          <OrderItem>
+            <div>
+              <img src={americano} alt="" />
+              <div>
+                <p>Americano</p>
+
+                <CoffeeQuantityTag>
+                  <button>
+                    <Minus size={14} weight="bold" />
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <Plus size={14} weight="bold" />
+                  </button>
+                </CoffeeQuantityTag>
+                <RemoveButton>
+                  <Trash size={16} />
+                  REMOVER
+                </RemoveButton>
+              </div>
+            </div>
+            <strong>R$ 9,90</strong>
+            <hr />
+          </OrderItem>
+          <OrderItem>
+            <div>
+              <img src={arabe} alt="" />
+              <div>
+                <p>Arabe</p>
+
+                <CoffeeQuantityTag>
+                  <button>
+                    <Minus size={14} weight="bold" />
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <Plus size={14} weight="bold" />
+                  </button>
+                </CoffeeQuantityTag>
+                <RemoveButton>
+                  <Trash size={16} />
+                  REMOVER
+                </RemoveButton>
+              </div>
+            </div>
+            <strong>R$ 12,90</strong>
+            <hr />
+          </OrderItem>
+          <div>
+            <p>Total de itens</p>
+            <p>R$ 22,80</p>
+          </div>
+          <div>
+            <p>Entrega</p>
+            <p>R$ 3,50</p>
+          </div>
+          <div>
+            <strong>Total</strong>
+            <strong>R$ 26,30</strong>
+          </div>
+          <ConfirmButton type="submit" form="checkoutForm">
+            CONFIRMAR PEDIDO
+          </ConfirmButton>
+        </SummaryContainer>
+      </OrderSummary>
     </CheckoutContainer>
   )
 }

@@ -81,9 +81,9 @@ export const CoffeeQuantityTag = styled.div`
   align-items: center;
   justify-content: space-around;
   background-color: ${(props) => props.theme['base-button']};
-  padding: 0.25rem;
-  gap: 0.5rem;
   border-radius: 8px;
+  max-width: 4.5rem;
+  height: 2.375rem;
 
   button {
     display: flex;
@@ -99,7 +99,7 @@ export const CoffeeQuantityTag = styled.div`
 
     :hover {
       color: ${(props) => props.theme['purple-dark']};
-      transition: color 0.4s;
+      transition: color 0.2s;
     }
   }
 
@@ -128,6 +128,6 @@ export const AddToCartButton = styled.button`
 
   :hover {
     background-color: ${(props) => props.theme['purple-dark']};
-    transition: background-color 0.4s;
+    transition: background-color 0.2s;
   }
 `

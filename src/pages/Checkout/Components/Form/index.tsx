@@ -1,9 +1,17 @@
 import { Bank, CreditCard, CurrencyDollar, MapPin, Money } from 'phosphor-react'
 import { FormContaiter, PaymentType, PaymentTypeItem } from './style'
+import { useNavigate } from 'react-router-dom'
 
 export function CheckoutForm() {
+  const submit = useNavigate()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    submit('/success')
+  }
+
   return (
-    <form id="checkoutForm">
+    <form id="checkoutForm" onSubmit={handleSubmit}>
       <FormContaiter>
         <span>
           <MapPin size={22} color="#CA7F17" />
@@ -26,7 +34,7 @@ export function CheckoutForm() {
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
           </p>
         </span>
-        <PaymentType>
+        <PaymentType defaultValue="creditCard">
           <PaymentTypeItem value="creditCard">
             <CreditCard size={16} />
 
